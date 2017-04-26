@@ -507,6 +507,7 @@
 				AD9B30AD1EADA14800B3A212 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AD9B30AE1EADA14800B3A212 /* Build configuration list for PBXNativeTarget "MacTestTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +516,7 @@
 				AD9B30B01EADA14800B3A212 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AD9B30B11EADA14800B3A212 /* Build configuration list for PBXNativeTarget "MacTestUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +525,7 @@
 				AD9B30B31EADA14800B3A212 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

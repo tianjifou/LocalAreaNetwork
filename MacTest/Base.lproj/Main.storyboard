@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -653,7 +656,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider=""/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
@@ -674,20 +677,139 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="208" y="202"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="518" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3wk-p7-Jb9">
+                                <rect key="frame" x="224" y="15" width="70" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="6U0-b3-fk8"/>
+                                    <constraint firstAttribute="height" constant="21" id="E7j-IZ-VDN"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" title="生成链接" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Ekc-3R-4FQ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="startAction:" target="XfG-lQ-9wD" id="phr-aA-Bea"/>
+                                </connections>
+                            </button>
+                            <box title="第一步" translatesAutoresizingMaskIntoConstraints="NO" id="LyJ-71-dGH" customClass="ExBox">
+                                <rect key="frame" x="27" y="146" width="206" height="104"/>
+                                <view key="contentView" id="MJG-gX-n1l">
+                                    <rect key="frame" x="2" y="2" width="202" height="87"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jYz-Ho-Otw">
+                                            <rect key="frame" x="8" y="34" width="186" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="182" id="Qdt-bF-U81"/>
+                                                <constraint firstAttribute="height" constant="20" id="ut0-9R-Uba"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="请拖入MacTest.xcodeproj文件" id="mNC-kh-apL">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="jYz-Ho-Otw" firstAttribute="centerX" secondItem="MJG-gX-n1l" secondAttribute="centerX" id="Ybe-VJ-ZrA"/>
+                                        <constraint firstItem="jYz-Ho-Otw" firstAttribute="centerY" secondItem="MJG-gX-n1l" secondAttribute="centerY" id="ynK-vV-Ei2"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="3WM-sv-GMu"/>
+                                    <constraint firstAttribute="width" constant="200" id="tIn-do-1n8"/>
+                                </constraints>
+                            </box>
+                            <scrollView wantsLayer="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycS-Pl-WV1">
+                                <rect key="frame" x="109" y="98" width="300" height="20"/>
+                                <clipView key="contentView" id="Hnp-3A-kig">
+                                    <rect key="frame" x="1" y="1" width="283" height="18"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView importsGraphics="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="eVE-ZF-nbH">
+                                            <rect key="frame" x="0.0" y="-0.5" width="283" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="minSize" width="283" height="18"/>
+                                            <size key="maxSize" width="463" height="10000000"/>
+                                            <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="FJf-IB-1D4"/>
+                                    <constraint firstAttribute="width" constant="300" id="k9P-3E-nhc"/>
+                                </constraints>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="3Zo-TC-9Df">
+                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="Oab-Y0-gJp">
+                                    <rect key="frame" x="284" y="1" width="15" height="18"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <box title="第二步" translatesAutoresizingMaskIntoConstraints="NO" id="D0Q-1V-YvI" customClass="ExBox">
+                                <rect key="frame" x="295" y="146" width="206" height="104"/>
+                                <view key="contentView" id="wbC-Um-cyg">
+                                    <rect key="frame" x="2" y="2" width="202" height="87"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rQa-hs-NQ5">
+                                            <rect key="frame" x="8" y="34" width="186" height="20"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="请拖入所需传递的zip文件" id="kRe-eW-FmB">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="rQa-hs-NQ5" firstAttribute="centerX" secondItem="wbC-Um-cyg" secondAttribute="centerX" id="ckL-t4-SyM"/>
+                                        <constraint firstItem="rQa-hs-NQ5" firstAttribute="centerY" secondItem="wbC-Um-cyg" secondAttribute="centerY" id="xbh-uJ-G6q"/>
+                                    </constraints>
+                                </view>
+                            </box>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="ycS-Pl-WV1" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="20h-9g-UMX"/>
+                            <constraint firstItem="rQa-hs-NQ5" firstAttribute="height" secondItem="jYz-Ho-Otw" secondAttribute="height" id="4SD-We-f18"/>
+                            <constraint firstItem="LyJ-71-dGH" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="30" id="5Sj-KP-d5w"/>
+                            <constraint firstItem="D0Q-1V-YvI" firstAttribute="width" secondItem="LyJ-71-dGH" secondAttribute="width" id="7yd-oH-Cv9"/>
+                            <constraint firstItem="3wk-p7-Jb9" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Hj7-Zx-aXg"/>
+                            <constraint firstItem="LyJ-71-dGH" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="QZN-is-WDm"/>
+                            <constraint firstItem="ycS-Pl-WV1" firstAttribute="top" secondItem="MJG-gX-n1l" secondAttribute="bottom" constant="30" id="c6i-F5-dvy"/>
+                            <constraint firstItem="rQa-hs-NQ5" firstAttribute="width" secondItem="jYz-Ho-Otw" secondAttribute="width" id="hk9-Md-xVI"/>
+                            <constraint firstItem="3wk-p7-Jb9" firstAttribute="top" secondItem="eVE-ZF-nbH" secondAttribute="bottom" constant="64" id="jZ0-xp-5AA"/>
+                            <constraint firstItem="D0Q-1V-YvI" firstAttribute="top" secondItem="LyJ-71-dGH" secondAttribute="top" id="qav-lV-Gql"/>
+                            <constraint firstItem="D0Q-1V-YvI" firstAttribute="height" secondItem="LyJ-71-dGH" secondAttribute="height" id="sbw-va-OpT"/>
+                            <constraint firstAttribute="trailing" secondItem="D0Q-1V-YvI" secondAttribute="trailing" constant="20" id="xwe-rQ-WAF"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="box" destination="LyJ-71-dGH" id="9mh-ES-BIx"/>
+                        <outlet property="exBox" destination="LyJ-71-dGH" id="JlK-5g-iRl"/>
+                        <outlet property="exBox2" destination="D0Q-1V-YvI" id="ozJ-tY-Udz"/>
+                        <outlet property="nameLabel" destination="mNC-kh-apL" id="caJ-jN-Df7"/>
+                        <outlet property="start" destination="3wk-p7-Jb9" id="0Hq-iX-Pix"/>
+                        <outlet property="textView" destination="eVE-ZF-nbH" id="CAA-P6-uG3"/>
+                        <outlet property="zipContentLabel" destination="kRe-eW-FmB" id="bNP-Ut-GUw"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="103" y="662"/>
         </scene>
     </scenes>
 </document>
