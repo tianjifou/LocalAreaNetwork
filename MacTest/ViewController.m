@@ -34,7 +34,7 @@
     
     NSString*localPath = [[self.path stringByDeletingLastPathComponent] stringByAppendingPathComponent:@"uploadservice/public"];
     NSString*zipPath = [self.zipPath stringByDeletingLastPathComponent];
-    NSString*zipName = [[self.zipPath componentsSeparatedByString:@"/"] lastObject];
+    NSString*zipName = [[[self.zipPath componentsSeparatedByString:@"/"] lastObject] stringByReplacingOccurrencesOfString:@" " withString:@""];
     NSMutableArray*arrArgs = [NSMutableArray arrayWithObjects:@"-l",@"-c", nil];
    
         if(self.path&&self.path.length>0&&self.zipPath&&self.zipPath.length>0){
