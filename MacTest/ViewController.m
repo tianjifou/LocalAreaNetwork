@@ -9,8 +9,7 @@
 #import "ViewController.h"
 #import <ifaddrs.h>
 #import <arpa/inet.h>
-#define PATH_XCODEPROJ @"PATH_XCODEPROJ"
-#define PATH_UPLOADSERICE @"PATH_UPLOADSERICE"
+
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -163,7 +162,7 @@
     NSArray*arr = [[sender draggingPasteboard] propertyListForType:NSFilenamesPboardType];
     if(arr.count>0){
         for (NSString*str  in arr) {
-            if ([str hasSuffix:@".zip"]||[str hasSuffix:@"xcodeproj"]) {
+            if ([str rangeOfString:@"."].location != NSNotFound) {
                 if(self.successBlock){
                     self.successBlock(str);
                 }

@@ -768,8 +768,8 @@
                                     <subviews>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rQa-hs-NQ5">
                                             <rect key="frame" x="8" y="34" width="186" height="20"/>
-                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="请拖入所需传递的zip文件" id="kRe-eW-FmB">
-                                                <font key="font" metaFont="system"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="请拖入所需传递的文件" id="kRe-eW-FmB">
+                                                <font key="font" size="13" name=".PingFangSC-Regular"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
