@@ -55,7 +55,7 @@
     [self executeTask:arrArgs success:^(NSString *str) {
         NSArray*arr = [str componentsSeparatedByString:@"\n"];
         for(NSString*str in arr){
-            if ([str rangeOfString:@".log"].location != NSNotFound ||[str rangeOfString:@".zip"].location != NSNotFound) {
+            if ([str rangeOfString:@"."].location != NSNotFound) {
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),^{
                     [weakSelf executeTask:@[@"-l",@"-c",[NSString stringWithFormat:@"cd %@;rm %@",localPath,str]] success:nil];
                 });
